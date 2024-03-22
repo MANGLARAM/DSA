@@ -4,16 +4,18 @@ class Solution {
        // 1 2 3 4 5 6 7 
        // rotate 0 to 2 then 3 to 6 and last 0 to 6
 
-       int stepsIndex = k;
+    
+       k = k % nums.length;
        int sizeIndex = nums.length;
+     
       //right shift
-       reverse(nums,0,(sizeIndex-stepsIndex)-1);
-       reverse(nums,(sizeIndex-stepsIndex),sizeIndex-1);
+       reverse(nums,0,(sizeIndex-k)-1);
+       reverse(nums,(sizeIndex-k),sizeIndex-1);
        reverse(nums,0,sizeIndex-1);
-
+       
        //left shift
-       reverse(nums,0,(sizeIndex-stepsIndex)-2);
-       reverse(nums,(sizeIndex-stepsIndex)-1,sizeIndex-1);
+       reverse(nums,0,(sizeIndex-k)-2);
+       reverse(nums,(sizeIndex-k)-1,sizeIndex-1);
        reverse(nums,0,sizeIndex-1);
     }
 
